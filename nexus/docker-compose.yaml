@@ -1,0 +1,14 @@
+version: "3.6"
+
+services:
+  nexus:
+    image: sonatype/nexus3:latest
+    #build: control
+    restart: always
+    ports:
+      - "8081:8081"
+    container_name: nexus
+    volumes:
+      - nexus-data:/nexus-data
+volumes:
+  nexus-data:
